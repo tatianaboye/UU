@@ -1,0 +1,85 @@
+/* GENERELT DÅRLIG STILARK */
+      /* bevisst: lav kontrast, små størrelser, ingen fokusmarkering */
+      html, body { width: 100%; height: 100%; }
+      body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 12px; /* bevisst: for liten standardtekst */
+        line-height: 1; /* bevisst: tett linjehøyde */
+        color: #9a9a9a; /* bevisst: lav kontrast mot hvit bakgrunn */
+        background: url('https://upload.wikimedia.org/wikipedia/commons/3/3f/Fronalpstock_big.jpg'); /* bevisst: støyende bakgrunn */
+        background-size: cover;
+        background-attachment: fixed;
+      }
+
+      /* bevisst: semantikk-brudd – alt er div-suppe */
+      .header { height: 80px; background: rgba(255,255,255,0.6); text-align:center; text-transform: uppercase; letter-spacing: 4px; }
+      .logo { display:inline-block; width: 60px; height: 60px; background: url('https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg'); background-size: contain; background-repeat: no-repeat; vertical-align: middle; margin-top: 10px; }
+      .site-title { display:inline-block; font-size: 16px; color: #bdbdbd; vertical-align: middle; }
+
+      /* bevisst: meny kun på hover, liten trefflate, dårlig kontrast */
+      .nav { background: #eaeaea; height: 30px; overflow: hidden; }
+      .nav a { color: #c0c0c0; text-decoration: none; padding: 5px 6px; display: inline-block; font-size: 11px; }
+      .nav a:hover { background: #dcdcdc; }
+      .nav .dropdown { position: relative; display: inline-block; }
+      .nav .dropdown ul { display: none; position: absolute; left: 0; top: 100%; list-style: none; margin: 0; padding: 0; background: #f2f2f2; width: 120px; }
+      .nav .dropdown:hover ul { display: block; } /* bevisst: krever hover – tastatur utilgjengelig */
+      .nav .dropdown ul li a { display: block; padding: 4px 6px; }
+
+      /* bevisst: knapper er spans, ingen fokusstil */
+      .btn { display:inline-block; padding: 6px 8px; background:#f0f0f0; border:1px solid #e0e0e0; border-radius: 2px; cursor: pointer; }
+      .btn:focus, a:focus, input:focus { outline: none; } /* bevisst: fjerner fokusindikator */
+
+      /* bevisst: løpende/blinkende tekst (forstyrrende) */
+      .ticker { white-space: nowrap; overflow: hidden; background: rgba(255,255,0,0.3); color:#cccc00; font-weight: bold; }
+      .ticker p { display: inline-block; padding-left: 100%; animation: scroll 8s linear infinite; }
+      @keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-100%); } }
+
+      /* layout-tabell (dårlig praksis) */
+      .layout { width: 960px; margin: 10px auto; background: rgba(255,255,255,0.6); }
+      table.layout { border-collapse: collapse; }
+      .layout td { vertical-align: top; padding: 6px; }
+      .sidebar { width: 220px; }
+
+      /* bevisst: ekstremt lav kontrast for lenker */
+      a { color: #bdbdbd; }
+
+      /* bevisst: tekst som kun formidles med farge */
+      .status-ok { color: #00aa00; }
+      .status-bad { color: #cc0000; }
+
+      /* bevisst: bittesmå klikkflater */
+      .tiny-link { font-size: 9px; padding: 2px; border:1px solid transparent; }
+
+      /* bevisst: dupliserte id-er */
+      #sekjson { padding: 8px; }
+      #sekjson { margin-top: 8px; }
+
+      /* bevisst: hardfixet høyde, tekst kan bli avkuttet ved zoom */
+      .card { height: 140px; overflow: hidden; background: rgba(255,255,255,0.5); border: 1px solid #e3e3e3; padding: 10px; margin-bottom: 10px; }
+
+      /* bevisst: skrift på bakgrunnsbilde uten bakgrunnsfarge */
+      .hero { height: 180px; display:flex; align-items:center; justify-content:center; text-align:center; font-size: 18px; font-weight: 700; color:#e0e0e0; }
+
+      /* bevisst: formular uten labels (kun placeholders) og dårlig kontrast */
+      .form { background: rgba(255,255,255,0.5); padding: 10px; }
+      .form input, .form select, .form textarea { display:block; width: 260px; padding: 4px; margin: 6px 0; font-size: 11px; color:#a1a1a1; border:1px solid #dcdcdc; }
+      .form .required { color: #cc0000; } /* bevisst: kun farge indikerer krav */
+      .form .help { font-size: 10px; color: #bbbbbb; }
+      .form .fake-submit { background:#efefef; border:1px solid #e0e0e0; padding: 6px 10px; display:inline-block; }
+
+      /* bevisst: positiv tabindex skaper rar rekkefølge */
+      .weird-order [tabindex] { border: 1px dashed transparent; }
+
+      /* bevisst: lav kontrast på skjemafeil */
+      .error { color:#ff9999; }
+
+      /* bevisst: tekst i store bokstaver og sentrert – vanskelig lesbarhet */
+      .shout { text-transform: uppercase; text-align:center; letter-spacing: 3px; }
+
+      /* bevisst: alt for smal linjelengde og justified */
+      .narrow { width: 180px; text-align: justify; }
+
+      /* print-uvennlig */
+      @media print { body { background: #000; color:#000; } }
+    </style>
